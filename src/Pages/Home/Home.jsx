@@ -7,19 +7,23 @@ import RightNavbar from "../Shahed/RightNavbar/RightNavbar";
 
 const Home = () => {
     return (
-        <div>
+        <div className=" w-[90%] mx-auto">
             <Header />
             <Marque />
             <Navbar />
 
-            <div className=" w-[80%] mx-auto grid grid-cols-4 gap-4">
+            <div className=" flex justify-between gap-4">
+                <div className=' w-[30%]'>
                 <LeftNavbar />
+                </div>
 
-                <div className=" col-span-2">
+                <div className="w-[40%] col-span-2">
                     <h1>Dragon News Home</h1>
                 </div>
 
+                <div className=' w-[30%]'>
                 <RightNavbar />
+                </div>
             </div>
         </div>
     );
