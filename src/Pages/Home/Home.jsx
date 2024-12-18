@@ -12,16 +12,16 @@ const Home = () => {
             <Marque />
             <Navbar />
 
-            <div className=" flex justify-between gap-4">
-                <div className=' w-[30%]'>
+            <div className=" grid grid-cols-4 gap-4">
+                <div className=' '>
                 <LeftNavbar />
                 </div>
 
-                <div className="w-[40%] col-span-2">
+                <div className=" col-span-2">
                     <h1>Dragon News Home</h1>
                 </div>
 
-                <div className=' w-[30%]'>
+                <div className=' '>
                 <RightNavbar />
                 </div>
             </div>
