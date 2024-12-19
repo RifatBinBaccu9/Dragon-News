@@ -7,9 +7,11 @@ import RightNavbar from "../Shahed/RightNavbar/RightNavbar";
 import Detailce from "./Detailce";
 
 
+
 const Home = () => {
     const news=useLoaderData();
 
+    
     return (
         <div className=" w-[90%] mx-auto">
             <Header />

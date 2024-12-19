@@ -7,13 +7,36 @@ import classing from "../../../../public/class.png"
 import swimming from "../../../../public/swimming.png"
 import playground from "../../../../public/playground.png"
 import bg from "../../../../public/bg.png"
+
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import app from "../../../Firebase/Firebase.config";
+// import { Result } from "postcss";
+
 const RightNavbar = () => {
+
+    const auth= getAuth(app);
+    console.log(app);
+    
+    const providear=new GoogleAuthProvider();
+
+    const handelProvider= () =>{
+        signInWithPopup(auth, providear)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log("error", error.message);
+            
+        })
+        
+    }
     return (
         <div>
             <h1>Login With</h1>
 
             <div className="text-md ">
-                <button className=" justify-center w-full border p-2 flex  gap-2 mt-2"><FaGoogle className="mt-1"/> Login With Google</button>
+                <button onClick={handelProvider} className=" justify-center w-full border p-2 flex  gap-2 mt-2"><FaGoogle className="mt-1"/> Login With Google</button>
                 <button className=" justify-center w-full border p-2 flex gap-2 mt-2"><FaGithub className="mt-1"/> Login With Github</button>
             </div>
 
