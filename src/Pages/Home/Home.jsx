@@ -5,12 +5,16 @@ import LeftNavbar from "../Shahed/LeftNavbar/LeftNavbar";
 import Navbar from "../Shahed/Navbar/Navbar";
 import RightNavbar from "../Shahed/RightNavbar/RightNavbar";
 import Detailce from "./Detailce";
+import { useContext } from "react";
+import { authProvider } from "../../AuthProvider/AuthProvider";
 
 
 
 const Home = () => {
     const news=useLoaderData();
-
+   
+    const conatextx=useContext(authProvider)
+    console.log(conatextx);
     
     return (
         <div className=" w-[90%] mx-auto">
@@ -24,7 +28,7 @@ const Home = () => {
                 </div>
 
                 <div className=" col-span-2">
-                <h1>Dragon News Home</h1> 
+                <h1>Dragon News Home: {conatextx.name}</h1> 
                     {
                         news.map((news, idx)=> <Detailce key={idx} news={news}></Detailce>)
                     }
