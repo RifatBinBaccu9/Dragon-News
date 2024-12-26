@@ -1,14 +1,16 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 
 const LeftNavbar = () => {
     const [categories, setCategories]=useState([]);
 
-    useEffect(()=>{
-        fetch('../../../../public/Api/categories.json')
-        .then(res => res.json())
-        .then(data => setCategories(data))
-    },[])
+    useEffect(() => {
+        axios.get('../../../../public/Api/categories.json')
+            .then(res => setCategories(res.data))
+            .catch(err => console.error(err));
+    }, []);
+    
     return (
         <div>
             <h1 className=" ">All Caterogy</h1>
